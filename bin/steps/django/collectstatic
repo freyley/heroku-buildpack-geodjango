@@ -11,13 +11,9 @@ export LIBRARY_PATH=.heroku/vendor/lib:.geodjango/proj4/lib:.geodjango/gdal/lib:
 export LD_LIBRARY_PATH=.heroku/vendor/lib:.geodjango/proj4/lib:.geodjango/gdal/lib:.geodjango/geos/lib
 export GEOS_LIBRARY_PATH=.geodjango/geos/lib
 
-echo "Checking if collectstatic can be run"
 # Check if collectstatic is configured properly.
-#python $MANAGE_FILE collectstatic --dry-run --noinput &> /dev/null && RUN_COLLECTSTATIC=true
-python $MANAGE_FILE collectstatic --dry-run --noinput && RUN_COLLECTSTATIC=true
-
-echo "Collectstatic can be run: $RUN_COLLECTSTATIC"
-sleep 40
+python $MANAGE_FILE collectstatic --dry-run --noinput &> /dev/null && RUN_COLLECTSTATIC=true
+#python $MANAGE_FILE collectstatic --dry-run --noinput && RUN_COLLECTSTATIC=true
 
 # Compile assets if collectstatic appears to be kosher.
 if [ "$RUN_COLLECTSTATIC" ]; then
