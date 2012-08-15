@@ -19,6 +19,7 @@ echo "Checking if collectstatic can be run"
 /app/bin/python $MANAGE_FILE collectstatic --dry-run --noinput && RUN_COLLECTSTATIC=true
 
 echo "Collectstatic can be run: $RUN_COLLECTSTATIC"
+sleep 40
 
 # Compile assets if collectstatic appears to be kosher.
 if [ "$RUN_COLLECTSTATIC" ]; then
