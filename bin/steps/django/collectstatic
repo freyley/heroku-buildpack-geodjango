@@ -8,9 +8,11 @@ indent() {
   [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
 }
 
-
+echo "Checking if collectstatic can be run"
 # Check if collectstatic is configured properly.
 python $MANAGE_FILE collectstatic --dry-run --noinput &> /dev/null && RUN_COLLECTSTATIC=true
+
+echo "Collectstatic can be run: $RUN_COLLECTSTATIC"
 
 # Compile assets if collectstatic appears to be kosher.
 if [ "$RUN_COLLECTSTATIC" ]; then
