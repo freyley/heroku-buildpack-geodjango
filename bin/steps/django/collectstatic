@@ -10,9 +10,8 @@ indent() {
 export LIBRARY_PATH=.heroku/vendor/lib:/app/.geodjango/proj4/lib:/app/.geodjango/gdal/lib:/app/.geodjango/geos/lib
 export LD_LIBRARY_PATH=.heroku/vendor/lib:/app/.geodjango/proj4/lib:/app/.geodjango/gdal/lib:/app/.geodjango/geos/lib
 export GEOS_LIBRARY_PATH=/app/.geodjango/geos/lib
-echo $(ls /app/.geodjango/geos/lib)
-echo "----"
-echo $(ls /app/.geodjango/)
+echo $(ls -al )
+echo $(ls -al /)
 
 echo "Checking if collectstatic can be run"
 # Check if collectstatic is configured properly.
