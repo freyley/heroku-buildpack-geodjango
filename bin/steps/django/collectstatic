@@ -7,11 +7,9 @@ indent() {
   RE="s/^/       /"
   [ $(uname) == "Darwin" ] && sed -l "$RE" || sed -u "$RE"
 }
-export LIBRARY_PATH=.heroku/vendor/lib:/app/.geodjango/proj4/lib:/app/.geodjango/gdal/lib:/app/.geodjango/geos/lib
-export LD_LIBRARY_PATH=.heroku/vendor/lib:/app/.geodjango/proj4/lib:/app/.geodjango/gdal/lib:/app/.geodjango/geos/lib
-export GEOS_LIBRARY_PATH=/app/.geodjango/geos/lib
-echo $(ls -al )
-echo $(ls -al /)
+export LIBRARY_PATH=.heroku/vendor/lib:.geodjango/proj4/lib:.geodjango/gdal/lib:.geodjango/geos/lib
+export LD_LIBRARY_PATH=.heroku/vendor/lib:.geodjango/proj4/lib:.geodjango/gdal/lib:.geodjango/geos/lib
+export GEOS_LIBRARY_PATH=.geodjango/geos/lib
 
 echo "Checking if collectstatic can be run"
 # Check if collectstatic is configured properly.
