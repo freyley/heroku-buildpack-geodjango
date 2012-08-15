@@ -42,7 +42,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 mkdir -p $BUILD_DIR $CACHE_DIR
-mkdir foo
+
+echo "USING FREYLEY'S NEW BUILDPACK"
 # The detected application type (`Python`|`Python/Django`).
 NAME=$($BIN_DIR/detect $BUILD_DIR)
 
